@@ -1,0 +1,2 @@
+class CreateSiteError(Exception):
+    pass

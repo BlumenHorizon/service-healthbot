@@ -1,0 +1,83 @@
+name: Problem Discussion
+description: Report a potential issue that needs attention and a decision—whether to address it now or later
+title: "[REVIEW] "
+labels: ["discussion", "help wanted"]
+
+body:
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Type of Request
+      multiple: true
+      options:
+        - Suspected Bug
+        - Potential Optimization
+        - Technical Debt
+        - Architecture Improvement
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem Description
+      description: Clearly and briefly describe the core of the problem. What raises concerns or needs to be revisited?
+      placeholder: We are facing unexpected behavior in the user authentication module.
+    validations:
+      required: true
+  - type: textarea
+    id: importance
+    attributes:
+      label: Why is this Important?
+      description: Why does this issue deserve attention? What consequences might it have (technical or business-related)?
+      placeholder: "This could impact user trust in our system if not fixed."
+    validations:
+      required: true
+  - type: input
+    id: model-task-controller
+    attributes:
+      label: Related Model / Task / Controller
+      description: Specify if it concerns a particular model, task, or controller.
+      placeholder: ex. "User model"
+    validations:
+      required: false
+  - type: dropdown
+    id: possible-actions
+    attributes:
+      label: Possible Actions
+      description: What action should be taken regarding this issue?
+      multiple: true
+      options:
+        - Fix now
+        - Postpone
+        - Add to backlog as technical debt
+        - Do nothing
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution (if any)
+      description: Suggest a possible solution if you have one in mind.
+      placeholder: Refactor the authentication module to handle edge cases.
+    validations:
+      required: false
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority (preliminary)
+      description: Select the priority of this issue.
+      options:
+        - 🟥 High (affects users or system stability)
+        - 🟧 Medium (should be discussed in the next meeting)
+        - 🟩 Low (not urgent, can be addressed later)
+    validations:
+      required: true
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments and Discussion
+      description: Provide space for ongoing discussion.
+      placeholder: Feel free to share any other thoughts or concerns.
+    validations:
+      required: false

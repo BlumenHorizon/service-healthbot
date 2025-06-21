@@ -1,0 +1,101 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
+
+# Mypy, Ruff, Pytype, etc.
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.dmypy.json
+dmypy.json
+
+# VSCode
+.vscode/
+.history/
+.ionide
+
+# GIT
+.git
+.github
+.gitignore
+
+# PyCharm / JetBrains
+.idea/
+.idea_modules/
+out/
+
+# Logs and caches
+*.log
+.cache
+.tox/
+.nox/
+.coverage
+.coverage.*
+.pytest_cache/
+.hypothesis/
+htmlcov/
+
+# Databases
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+*.pdb
+*.accdb
+*.mdb
+*.dbf
+
+# Build artifacts
+build/
+dist/
+downloads/
+.eggs/
+*.egg
+*.egg-info/
+.installed.cfg
+MANIFEST
+target/
+cython_debug/
+
+# Docs
+docs/_build/
+.site/
+
+# Config files (optional)
+.env*
+poetry.toml
+.pdm.toml
+pyrightconfig.json
+
+# Docker-related
+Dockerfile
+docker-compose.yml
+docker-compose.dev.yml
+.dockerignore
+
+# Misc
+trash.py
+savelogs.sh
+Makefile
+Justfile
+README.md

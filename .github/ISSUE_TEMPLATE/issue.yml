@@ -1,0 +1,78 @@
+name: Issue
+description: Report a bug, request a refactor, or suggest a configuration change
+title: "[ISSUE] "
+labels: ["bug", "help wanted"]
+
+body:
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Type of Task
+      description: Select the type of task you are reporting.
+      options:
+        - Bug
+        - Refactor
+        - Configuration
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a brief description of the issue or request.
+      placeholder: Feature request for new authentication method
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Related Model (optional)
+      description: The name of the related model if applicable.
+      placeholder: User
+    validations:
+      required: false
+  - type: input
+    id: controller-task
+    attributes:
+      label: Related Controller / Task (optional)
+      description: The name of the related controller or task (e.g., Celery task) if applicable.
+      placeholder: get_offerwalls
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What Happened? (for bugs only)
+      description: Describe what happened and include any error messages.
+      placeholder: Describe the behavior observed.
+      value: A bug happened!
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What is Expected?
+      description: Describe the expected behavior or goal of the change.
+      placeholder: ex. "The login should return a user profile."
+      value: The expected behavior.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Select the priority level of this issue.
+      options:
+        - 🟥 High (critical)
+        - 🟧 Medium (recommended)
+        - 🟩 Low (can be done later)
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any additional context or information about the task.
+      placeholder: Additional error logs or environment details.
+    validations:
+      required: false

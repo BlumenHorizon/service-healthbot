@@ -1,0 +1,48 @@
+networks:
+  internal_network:
+    driver: bridge
+
+services:
+  healthbot:
+    build: .
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: sh -c "python3 -m src.db.init_db && python3 -m src.main"
+    env_file:
+      - .env.prod
+    volumes:
+      - bot_logs:/var/www/service-health-bot/src/logs
+    restart: on-failure
+    networks:
+      - internal_network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.4
+    container_name: healthbot-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: lifebot
+      MYSQL_USER: lifebot_user
+      MYSQL_PASSWORD: lifebot_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - internal_network
+    ports:
+      - 3306:3306
+    
+  redis:
+    image: redis:7.2-alpine
+    container_name: redis
+    restart: unless-stopped
+    networks:
+      - internal_network
+    ports:
+      - 6379:6379
+
+volumes:
+  mysql_data:
+  bot_logs:
