@@ -23,9 +23,9 @@ services:
     container_name: healthbot-mysql
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: lifebot
-      MYSQL_USER: lifebot_user
-      MYSQL_PASSWORD: lifebot_pass
+      MYSQL_DATABASE: healthbot
+      MYSQL_USER: healthbot_user
+      MYSQL_PASSWORD: healthbot_pass
       MYSQL_ROOT_PASSWORD: root_pass
     volumes:
       - mysql_data:/var/lib/mysql
