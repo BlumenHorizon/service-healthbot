@@ -11,7 +11,7 @@ services:
     env_file:
       - .env.prod
     volumes:
-      - bot_logs:/var/www/service-health-bot/src/logs
+      - bot_logs:/var/www/service-healthbot/src/logs
     restart: on-failure
     networks:
       - internal_network
@@ -40,8 +40,6 @@ services:
     restart: unless-stopped
     networks:
       - internal_network
-    ports:
-      - 6379:6379
 
 volumes:
   mysql_data:

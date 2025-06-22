@@ -12,7 +12,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
 RUN echo $TZ > /etc/timezone
 RUN pip install --no-cache-dir poetry
 
-WORKDIR /var/www/service-health-bot/
+WORKDIR /var/www/service-healthbot/
 COPY . .
 RUN poetry config virtualenvs.create false
 RUN poetry install --only main --no-interaction
