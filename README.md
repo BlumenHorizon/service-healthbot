@@ -19,9 +19,6 @@ The code is well decomposed, strictly typed (using mypy), and works with MySQL a
 
 - Python with dependency management via [Poetry 2.1.3](https://python-poetry.org/)  
 - Full type coverage with [mypy strict mode](https://mypy-lang.org/)  
-- Docker Compose configuration for development (`docker-compose.dev.yml`)  
-- MySQL 8.0 for persistent data storage  
-- Redis 7.2-alpine for temporary data (especially for periodic bot tasks)  
 - Lightweight `Justfile` for task automation  
 - Logging with [Loguru](https://github.com/Delgan/loguru), saving logs to `src/logs/bot.log`  
 - Code formatting: `black`, `isort`, `autoflake`
