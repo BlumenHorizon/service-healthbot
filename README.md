@@ -21,7 +21,9 @@ The code is well decomposed, strictly typed (using mypy), and works with MySQL a
 
 - Python with dependency management via [Poetry 2.1.3](https://python-poetry.org/)  
 - Full type coverage with [mypy strict mode](https://mypy-lang.org/)  
-- Docker Compose configuration for development (`docker-compose.dev.yml`) 
+- Docker Compose configuration for development (`docker-compose.dev.yml`)  
+- MySQL 8.0 for persistent data storage  
+- Redis 7.2-alpine for temporary data (especially for periodic bot tasks)  
 - Lightweight `Justfile` for task automation  
 - Logging with [Loguru](https://github.com/Delgan/loguru), saving logs to `src/logs/bot.log`  
 - Code formatting: `black`, `isort`, `autoflake`
@@ -36,18 +38,27 @@ The code is well decomposed, strictly typed (using mypy), and works with MySQL a
 
 ---
 
-## Running and Setup
+## Configuration — `.env.example`
 
-1. Obtain your Telegram bot token via [BotFather](https://t.me/BotFather)
-2. Send the first message to your bot to activate it
-3. Get the `user_id` and `chat_id` for the administrator — you can get these via [@userinfobot](https://t.me/userinfobot)
-4. Fill in the following variables in `.env` or `.env.dev`:
-   - `BOT_TOKEN` — the token from BotFather
-   - `TELEGRAM_ADMINS` — list of admin IDs separated by `;` (e.g., `123456;789012`)
-   - `ALLOWED_CHAT_IDS` — list of allowed chat IDs separated by `;`
-   - `DB_URL` — PostgreSQL connection string, for example `postgresql+asyncpg://user:pass@postgres:5432/dbname`
-   - `REDIS_URL` — Redis connection URL, for example `redis://redis:6379`
+```env
+### --- Telegram Bot Configuration ---
+BOT_TOKEN="1111111111:AAAAA-aaaaaaaaaaaaaa-aaaaaaaaa"
+TELEGRAM_ADMINS="1111111111;122222222"           # List of Telegram user IDs separated by ;
+ALLOWED_CHAT_IDS="-1111111111111;-333333333333"  # List of allowed chat/group IDs separated by ;
 
-5. Run the bot with the command:
-   ```bash
-   docker compose -f docker-compose.dev.yml up
+### --- Application Mode ---
+MODE="PROD"  # or "DEV"
+
+### --- MySQL Configuration ---
+MYSQL_DATABASE=healthbot
+MYSQL_USER=healthbot_user
+MYSQL_PASSWORD=healthbot_pass
+MYSQL_ROOT_PASSWORD=healthbot_root_pass
+MYSQL_PORT=3306
+MYSQL_HOST=mysql
+
+### --- Redis Configuration ---
+REDIS_URL="redis://redis:6379"
+
+### --- Logger Configuration ---
+LOGURU_LOGS_LEVEL=DEBUG
