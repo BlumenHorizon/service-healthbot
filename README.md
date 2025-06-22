@@ -4,9 +4,7 @@
 [![Poetry Version](https://img.shields.io/badge/poetry-2.1.3-blue?logo=python&style=flat-square)](https://python-poetry.org/)  
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)  
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)  
-![Docker Image Size](https://img.shields.io/badge/docker-image_~400MB-blue?style=flat-square&logo=docker)  
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql&style=flat-square)](https://www.mysql.com/)  
-[![Redis](https://img.shields.io/badge/Redis-7.2_alpine-red?logo=redis&style=flat-square)](https://redis.io/)
+![Docker Image Size](https://img.shields.io/badge/docker-image_~400MB-blue?style=flat-square&logo=docker)
 
 ---
 
