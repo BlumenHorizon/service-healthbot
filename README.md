@@ -1,11 +1,11 @@
 # Healthbot — Telegram Bot for Site Monitoring
 
-[![python](https://img.shields.io/badge/Python-3.13-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![Poetry Version](https://img.shields.io/badge/poetry-2.1.3-blue?logo=python&style=flat-square)](https://python-poetry.org/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
-![Docker Image Size](https://img.shields.io/badge/docker-image_~400MB-blue?style=flat-square&logo=docker)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-blue?logo=postgresql&style=flat-square)](https://www.postgresql.org/)
+[![python](https://img.shields.io/badge/Python-3.13-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)  
+[![Poetry Version](https://img.shields.io/badge/poetry-2.1.3-blue?logo=python&style=flat-square)](https://python-poetry.org/)  
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)  
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)  
+![Docker Image Size](https://img.shields.io/badge/docker-image_~400MB-blue?style=flat-square&logo=docker)  
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql&style=flat-square)](https://www.mysql.com/)  
 [![Redis](https://img.shields.io/badge/Redis-7.2_alpine-red?logo=redis&style=flat-square)](https://redis.io/)
 
 ---
@@ -13,25 +13,26 @@
 ## Description
 
 BlumenHorizon Healthbot is a Telegram bot for monitoring website statuses.  
-The code is well decomposed, strictly typed (using mypy), and works with PostgreSQL and Redis for persistent and temporary data respectively.
+The code is well decomposed, strictly typed (using mypy), and works with MySQL and Redis for persistent and temporary data respectively.
 
 ---
 
 ## Technologies and Stack
 
-- Python with dependency management via [Poetry 2.1.3](https://python-poetry.org/)
-- Full type coverage with [mypy strict mode](https://mypy-lang.org/)
-- Lightweight `Justfile` for task automation
-- Logging with [Loguru](https://github.com/Delgan/loguru), saving logs to `src/logs/bot.log`
+- Python with dependency management via [Poetry 2.1.3](https://python-poetry.org/)  
+- Full type coverage with [mypy strict mode](https://mypy-lang.org/)  
+- Docker Compose configuration for development (`docker-compose.dev.yml`) 
+- Lightweight `Justfile` for task automation  
+- Logging with [Loguru](https://github.com/Delgan/loguru), saving logs to `src/logs/bot.log`  
 - Code formatting: `black`, `isort`, `autoflake`
 
 ---
 
 ## Size and Quality
 
-- The main application container weighs about **266 MB**
-- The code has been manually tested for website interactions
-- The code is well structured, but there is room for improvements
+- The main application container weighs about **266 MB**  
+- The code has been manually tested for website interactions  
+- The code is well structured, but there is room for improvements  
 
 ---
 
