@@ -4,7 +4,7 @@
 [![Poetry Version](https://img.shields.io/badge/poetry-2.1.3-blue?logo=python&style=flat-square)](https://python-poetry.org/)  
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)  
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)  
-![Docker Image Size](https://img.shields.io/badge/docker-image_~400MB-blue?style=flat-square&logo=docker)
+![Docker Image Size](https://img.shields.io/badge/docker-image_~366MB-blue?style=flat-square&logo=docker)
 
 ---
 
@@ -30,7 +30,7 @@ The code is well decomposed, strictly typed (using mypy), and works with MySQL a
 
 ## Size and Quality
 
-- The main application container weighs about **266 MB**  
+- The main application container weighs about **366 MB**  
 - The code has been manually tested for website interactions  
 - The code is well structured, but there is room for improvements  
 
