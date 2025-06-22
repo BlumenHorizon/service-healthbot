@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 from telegram.ext import Application, CallbackQueryHandler, CommandHandler
 
 from src import commands, config
-from src.db.database import engine
 from src.handlers.buttons import monolith_button
 from src.handlers.error import handle_error
 from src.logger import configure_logger
