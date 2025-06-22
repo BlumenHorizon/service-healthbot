@@ -15,13 +15,6 @@ services:
     restart: on-failure
     networks:
       - internal_network
-    
-  redis:
-    image: redis:7.2-alpine
-    container_name: redis
-    restart: unless-stopped
-    networks:
-      - internal_network
 
 volumes:
   bot_logs:
