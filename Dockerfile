@@ -2,11 +2,10 @@ FROM python:3.13-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    WE_ARE_IN_DOCKER=1 \
     LC_ALL=C.UTF-8 \
     LANG=C.UTF-8 \
     LANGUAGE=C.UTF-8 \
-    TZ=Europe/Kyiv
+    TZ=Europe/Berlin
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
 RUN echo $TZ > /etc/timezone
