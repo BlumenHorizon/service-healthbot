@@ -15,19 +15,6 @@ services:
     restart: on-failure
     networks:
       - internal_network
-    depends_on:
-      - mysql
-
-  mysql:
-    image: mysql:8.4
-    container_name: healthbot-mysql
-    restart: unless-stopped
-    env_file:
-      - .env.prod
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - internal_network
     
   redis:
     image: redis:7.2-alpine
@@ -37,5 +24,4 @@ services:
       - internal_network
 
 volumes:
-  mysql_data:
   bot_logs:
