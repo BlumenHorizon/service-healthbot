@@ -94,8 +94,5 @@ docker-compose.dev.yml
 .dockerignore
 
 # Misc
-trash.py
-savelogs.sh
-Makefile
 Justfile
 README.md
