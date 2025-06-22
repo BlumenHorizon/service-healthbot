@@ -16,5 +16,6 @@ COPY . .
 RUN poetry config virtualenvs.create false
 RUN poetry install --only main --no-interaction
 RUN rm -rf ~/.cache/pypoetry
+RUN pip uninstall -y poetry
 
 EXPOSE 7070
