@@ -22,17 +22,12 @@ services:
     image: mysql:8.4
     container_name: healthbot-mysql
     restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: healthbot
-      MYSQL_USER: healthbot_user
-      MYSQL_PASSWORD: healthbot_pass
-      MYSQL_ROOT_PASSWORD: root_pass
+    env_file:
+      - .env.prod
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
       - internal_network
-    ports:
-      - 3306:3306
     
   redis:
     image: redis:7.2-alpine
